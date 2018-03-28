@@ -18,6 +18,12 @@
 		943FE26A206B9245004771F6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE269206B9245004771F6 /* HomeViewController.swift */; };
 		943FE26D206BA679004771F6 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE26C206BA679004771F6 /* Film.swift */; };
 		943FE270206BA748004771F6 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE26F206BA748004771F6 /* HomeTableViewCell.swift */; };
+		943FE273206BADA2004771F6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE272206BADA2004771F6 /* APIManager.swift */; };
+		943FE275206BADBE004771F6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE274206BADBE004771F6 /* NetworkManager.swift */; };
+		943FE277206BAE6D004771F6 /* FilmsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE276206BAE6D004771F6 /* FilmsResponse.swift */; };
+		943FE279206BC34D004771F6 /* OMDBSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE278206BC34D004771F6 /* OMDBSearchResult.swift */; };
+		943FE27B206BD782004771F6 /* OMDBFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE27A206BD782004771F6 /* OMDBFilm.swift */; };
+		943FE27D206BDA9A004771F6 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE27C206BDA9A004771F6 /* UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,12 @@
 		943FE269206B9245004771F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		943FE26C206BA679004771F6 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
 		943FE26F206BA748004771F6 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		943FE272206BADA2004771F6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		943FE274206BADBE004771F6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		943FE276206BAE6D004771F6 /* FilmsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsResponse.swift; sourceTree = "<group>"; };
+		943FE278206BC34D004771F6 /* OMDBSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBSearchResult.swift; sourceTree = "<group>"; };
+		943FE27A206BD782004771F6 /* OMDBFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OMDBFilm.swift; sourceTree = "<group>"; };
+		943FE27C206BDA9A004771F6 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +135,7 @@
 		943FE264206B901C004771F6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				943FE27C206BDA9A004771F6 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -131,6 +144,9 @@
 			isa = PBXGroup;
 			children = (
 				943FE26C206BA679004771F6 /* Film.swift */,
+				943FE276206BAE6D004771F6 /* FilmsResponse.swift */,
+				943FE278206BC34D004771F6 /* OMDBSearchResult.swift */,
+				943FE27A206BD782004771F6 /* OMDBFilm.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,6 +154,8 @@
 		943FE266206B9044004771F6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				943FE274206BADBE004771F6 /* NetworkManager.swift */,
+				943FE272206BADA2004771F6 /* APIManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -262,9 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				943FE277206BAE6D004771F6 /* FilmsResponse.swift in Sources */,
+				943FE279206BC34D004771F6 /* OMDBSearchResult.swift in Sources */,
+				943FE275206BADBE004771F6 /* NetworkManager.swift in Sources */,
+				943FE273206BADA2004771F6 /* APIManager.swift in Sources */,
+				943FE27D206BDA9A004771F6 /* UIImageView.swift in Sources */,
 				943FE26A206B9245004771F6 /* HomeViewController.swift in Sources */,
 				943FE26D206BA679004771F6 /* Film.swift in Sources */,
 				943FE270206BA748004771F6 /* HomeTableViewCell.swift in Sources */,
+				943FE27B206BD782004771F6 /* OMDBFilm.swift in Sources */,
 				943FE247206B8F08004771F6 /* SWAPIdemo.xcdatamodeld in Sources */,
 				943FE23F206B8F08004771F6 /* AppDelegate.swift in Sources */,
 				943FE263206B900C004771F6 /* Constants.swift in Sources */,

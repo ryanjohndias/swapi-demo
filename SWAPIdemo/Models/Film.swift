@@ -10,13 +10,25 @@ import Foundation
 
 struct Film: Codable {
 
-    let episode_id: String
+    private enum CodingKeys: String, CodingKey {
+        case episodeId = "episode_id"
+        case title
+        case openingCrawlText = "opening_crawl"
+        case director
+        case producer
+        case releaseDate = "release_date"
+        case created
+        case edited
+    }
+    
+    let episodeId: Int
     let title: String
-    let opening_crawl: String
+    let openingCrawlText: String
     let director: String
     let producer: String
-    let release_date: String
-    let created: Date
-    let edited: Date
+    let releaseDate: String
     
+    // TODO: Parse these to dates
+    let created: String
+    let edited: String
 }

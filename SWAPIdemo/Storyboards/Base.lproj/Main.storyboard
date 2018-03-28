@@ -14,6 +14,7 @@
     <customFonts key="customFonts">
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue-Medium</string>
         </array>
     </customFonts>
@@ -69,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="1145" y="93"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Films-->
         <scene sceneID="X91-L4-2wj">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="D5y-RY-pDh" customClass="HomeViewController" customModule="SWAPIdemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" title="Films" id="D5y-RY-pDh" customClass="HomeViewController" customModule="SWAPIdemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4YW-r5-jN4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,14 +82,14 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="168" id="UeR-zt-Cgn" customClass="HomeTableViewCell" customModule="SWAPIdemo" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HomeTableViewCell" rowHeight="168" id="UeR-zt-Cgn" customClass="HomeTableViewCell" customModule="SWAPIdemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="168"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UeR-zt-Cgn" id="aJe-lw-L2k">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQM-s5-Ytk">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQM-s5-Ytk">
                                                     <rect key="frame" x="8" y="8" width="150" height="150"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
@@ -97,19 +98,19 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLs-aw-sct">
                                                     <rect key="frame" x="166" y="8" width="201" height="20"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqO-CG-DNq">
                                                     <rect key="frame" x="166" y="28" width="201" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdu-JI-uA1" userLabel="Seperator">
                                                     <rect key="frame" x="166" y="56" width="201" height="1"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="pse-7p-Ij0"/>
                                                     </constraints>
@@ -154,7 +155,8 @@
                                                 <constraint firstItem="00S-s3-hwe" firstAttribute="top" secondItem="eFs-h0-ZCj" secondAttribute="bottom" id="ZB8-S0-9iC"/>
                                                 <constraint firstItem="qLs-aw-sct" firstAttribute="leading" secondItem="vQM-s5-Ytk" secondAttribute="trailing" constant="8" id="a0F-yB-Zb2"/>
                                                 <constraint firstItem="Pdu-JI-uA1" firstAttribute="leading" secondItem="vQM-s5-Ytk" secondAttribute="trailing" constant="8" id="bsW-sE-U6t"/>
-                                                <constraint firstAttribute="bottom" secondItem="QfY-HM-acy" secondAttribute="bottom" constant="8.5" id="j9Y-nF-DEQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="QfY-HM-acy" secondAttribute="bottom" constant="8" id="j9Y-nF-DEQ"/>
+                                                <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="vQM-s5-Ytk" secondAttribute="bottom" constant="9" id="jlS-jF-8hs"/>
                                                 <constraint firstItem="Pdu-JI-uA1" firstAttribute="top" secondItem="nqO-CG-DNq" secondAttribute="bottom" constant="8" id="k4S-1A-hj2"/>
                                                 <constraint firstAttribute="trailing" secondItem="QfY-HM-acy" secondAttribute="trailing" constant="8" id="koO-Zs-lZm"/>
                                                 <constraint firstAttribute="trailing" secondItem="nqO-CG-DNq" secondAttribute="trailing" constant="8" id="lFa-Xr-laQ"/>
@@ -167,6 +169,7 @@
                                                 <constraint firstItem="QfY-HM-acy" firstAttribute="leading" secondItem="vQM-s5-Ytk" secondAttribute="trailing" constant="8" id="xxO-4h-Elv"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="directorLabel" destination="00S-s3-hwe" id="W5I-2F-pHm"/>
                                             <outlet property="mainImageView" destination="vQM-s5-Ytk" id="XOH-U4-PnC"/>

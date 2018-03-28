@@ -16,6 +16,7 @@ class SplashViewController: UIViewController {
         // TODO: Fetch data
         // TODO: Show activity after x seconds of waiting
         
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     // TODO: Temporary navigation
@@ -24,6 +25,11 @@ class SplashViewController: UIViewController {
         gotoHomeViewController()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     // MARK: - Navigation
     
     func gotoHomeViewController() {
