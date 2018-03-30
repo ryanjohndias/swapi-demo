@@ -17,12 +17,12 @@ class SplashViewController: UIViewController {
         // TODO: Show activity after x seconds of waiting
         
         navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    // TODO: Temporary navigation
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        gotoHomeViewController()
+        
+        APIManager.shared.getFilms(success: { filmsResponse in
+            self.gotoHomeViewController()
+        }) { error in
+            
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {

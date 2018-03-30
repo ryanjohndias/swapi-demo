@@ -16,7 +16,8 @@ class HomeViewController: UIViewController {
     
     // MARK: - Class vars
     
-    var films: [Film] = []
+    var films: [CDFilm] = []
+    var releaseDateFormatter = DateFormatter(withFormat: "YYYY-mm-dd")
     
     // MARK: - Lifecycle
     
@@ -29,32 +30,39 @@ class HomeViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 168
         
-        // FIXME: Temporarily fetching the data here
-        APIManager.shared.getFilms(success: { filmsResponse in
+        CoreDataManager.shared.fetchFilms(success: { (films) in
             
-            let releaseDateFormatter = DateFormatter()
-            releaseDateFormatter.dateFormat = "YYYY-mm-dd"
-            self.films = filmsResponse.results.sorted(by: { (film1, film2) -> Bool in
-                
-                let date1 = releaseDateFormatter.date(from: film1.releaseDate)
-                let date2 = releaseDateFormatter.date(from: film2.releaseDate)
-                
-                if let date1 = date1, let date2 = date2 {
+            self.films = films.sorted(by: { (film1, film2) -> Bool in
+
+                if let date1 = film1.releaseDate as Date?, let date2 = film2.releaseDate as Date? {
                     return date1.compare(date2) == .orderedAscending
                 } else {
-                    return true
+                    return false
                 }
-                
             })
+            
             self.tableView.reloadData()
-        }) { error in
-            print(error)
-        }
+            
+        }, failure: { (error) in
+            
+        })
+        
     }
 
+    // MARK: - Navigation
+    
+    func gotoFilm(_ film: CDFilm) {
+        
+        if let filmViewController = storyboard?.instantiateViewController(withIdentifier: Constants.Navigation.filmViewController) as? FilmViewController {
+            filmViewController.film = film
+            navigationController?.pushViewController(filmViewController, animated: true)
+        }
+    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return films.count
     }
@@ -65,21 +73,26 @@ extension HomeViewController: UITableViewDataSource {
         let film = films[indexPath.row]
         
         cell.titleLabel.text = film.title
-        cell.releaseDateLabel.text = film.releaseDate
         cell.directorLabel.text = film.director
         cell.producersLabel.text = film.producer
-        
-        // FIXME: Temporary call location
-        APIManager.shared.searchOMDB(for: film.title, success: { omdbFilm in
-            cell.mainImageView.loadImage(fromURL: omdbFilm.Poster)
-        }) { error in
-            
+        if let releaseDate = film.releaseDate as Date? {
+            cell.releaseDateLabel.text = releaseDateFormatter.string(from: releaseDate)
         }
-        
+        cell.mainImageView.image = nil
+        if let imageUrl = film.imageUrl {
+            cell.mainImageView.loadImage(fromURL: imageUrl)
+        }
+ 
         return cell
     }
     
+}
+
+extension HomeViewController: UITableViewDelegate {
     
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let film = films[indexPath.row]
+        gotoFilm(film)
+    }
 }

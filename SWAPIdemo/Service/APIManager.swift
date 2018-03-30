@@ -36,7 +36,43 @@ class APIManager {
         var url = baseURL()
         url.appendPathComponent("films/")
         
-        NetworkManager.shared.get(url: url, success: success, failure: failure)
+        // Fetch all films
+        NetworkManager.shared.get(url: url, success: { (response: FilmsResponse) in
+            
+            let group = DispatchGroup()
+            
+            var urls: [Int: String] = [:]
+            
+            // Fetch the OMDB record for each film
+            for film in response.results {
+                group.enter()
+                self.searchOMDB(for: film.title, success: { (omdbFilm) in
+                    urls[film.episodeId] = omdbFilm.Poster
+                    group.leave()
+                }, failure: { (error) in
+                    group.leave()
+                })
+            }
+            
+            // All OMDB records have been fetched; continue with saving
+            group.notify(queue: .main, execute: {
+                for film in response.results {
+                    CoreDataManager.shared.saveFilm(film: film, withImageUrl: urls[film.episodeId])
+                }
+                success?(response)
+            })
+            
+        }, failure: failure)
+    }
+    
+    func getPerson(withUrl urlString: String, success: ((Person) -> Void)?, failure: ((Error) -> Void)?) {
+        
+        let url = URL(string: urlString)
+        if let url = url {
+            NetworkManager.shared.get(url: url, success: success, failure: failure)
+        } else {
+            // TODO: Error handling
+        }
     }
     
     func searchOMDB(for searchTerm: String, success: ((OMDBFilm) -> Void)?, failure: ((Error?) -> Void)?) {

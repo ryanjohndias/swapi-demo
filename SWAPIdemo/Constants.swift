@@ -25,6 +25,7 @@ enum Constants {
         
         static let splashViewController = "SplashViewController"
         static let homeViewController = "HomeViewController"
+        static let filmViewController = "FilmViewController"
         
         static let homeTableViewCell = "HomeTableViewCell"
     }

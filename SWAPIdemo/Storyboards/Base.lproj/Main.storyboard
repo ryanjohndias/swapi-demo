@@ -202,6 +202,98 @@
             </objects>
             <point key="canvasLocation" x="1880.8" y="92.203898050974516"/>
         </scene>
+        <!--Film View Controller-->
+        <scene sceneID="z6G-dZ-bda">
+            <objects>
+                <viewController storyboardIdentifier="FilmViewController" id="jFt-MG-sKo" customClass="FilmViewController" customModule="SWAPIdemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lwL-o0-1VU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NJ-aI-xTH">
+                                <rect key="frame" x="16" y="28" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yez-ox-YTl">
+                                <rect key="frame" x="16" y="56" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deq-tK-9Fx" userLabel="Seperator">
+                                <rect key="frame" x="16" y="84" width="343" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="dvi-tr-oqs"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHARACTERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRV-2y-gFW">
+                                <rect key="frame" x="16" y="103" width="343" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbS-zA-jzu">
+                                <rect key="frame" x="16" y="129" width="343" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dx-b5-4pC" userLabel="Seperator">
+                                <rect key="frame" x="16" y="155" width="343" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="YBJ-9U-F3w"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0V-gQ-1O8">
+                                <rect key="frame" x="16" y="172" width="343" height="479"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.  During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.  Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mkn-Y1-UDB" firstAttribute="trailing" secondItem="7NJ-aI-xTH" secondAttribute="trailing" constant="16" id="1k4-p4-e7f"/>
+                            <constraint firstItem="mkn-Y1-UDB" firstAttribute="trailing" secondItem="MbS-zA-jzu" secondAttribute="trailing" constant="16" id="4Dy-cv-kzO"/>
+                            <constraint firstItem="y0V-gQ-1O8" firstAttribute="leading" secondItem="mkn-Y1-UDB" secondAttribute="leading" constant="16" id="5TV-q5-bRk"/>
+                            <constraint firstItem="Yez-ox-YTl" firstAttribute="top" secondItem="7NJ-aI-xTH" secondAttribute="bottom" constant="8" id="8et-QW-YfR"/>
+                            <constraint firstItem="mkn-Y1-UDB" firstAttribute="bottom" secondItem="y0V-gQ-1O8" secondAttribute="bottom" constant="16" id="BD0-lS-gvm"/>
+                            <constraint firstItem="MbS-zA-jzu" firstAttribute="top" secondItem="BRV-2y-gFW" secondAttribute="bottom" constant="8" id="CBq-Xv-0Jw"/>
+                            <constraint firstItem="mkn-Y1-UDB" firstAttribute="trailing" secondItem="deq-tK-9Fx" secondAttribute="trailing" constant="16" id="IeD-4D-Bpd"/>
+                            <constraint firstItem="deq-tK-9Fx" firstAttribute="leading" secondItem="mkn-Y1-UDB" secondAttribute="leading" constant="16" id="JG7-kA-zWP"/>
+                            <constraint firstItem="mkn-Y1-UDB" firstAttribute="trailing" secondItem="9dx-b5-4pC" secondAttribute="trailing" constant="16" id="MLD-gl-jfa"/>
+                            <constraint firstItem="Yez-ox-YTl" firstAttribute="leading" secondItem="mkn-Y1-UDB" secondAttribute="leading" constant="16" id="TYq-fz-dWN"/>
+                            <constraint firstItem="9dx-b5-4pC" firstAttribute="top" secondItem="MbS-zA-jzu" secondAttribute="bottom" constant="8" id="V86-19-bzz"/>
+                            <constraint firstItem="y0V-gQ-1O8" firstAttribute="top" secondItem="9dx-b5-4pC" secondAttribute="bottom" constant="16" id="VHX-91-cgE"/>
+                            <constraint firstItem="9dx-b5-4pC" firstAttribute="leading" secondItem="mkn-Y1-UDB" secondAttribute="leading" constant="16" id="WhT-gZ-KQj"/>
+                            <constraint firstItem="mkn-Y1-UDB" firstAttribute="trailing" secondItem="Yez-ox-YTl" secondAttribute="trailing" constant="16" id="XCE-0R-Rqn"/>
+                            <constraint firstItem="7NJ-aI-xTH" firstAttribute="leading" secondItem="mkn-Y1-UDB" secondAttribute="leading" constant="16" id="YPp-sj-0hg"/>
+                            <constraint firstItem="MbS-zA-jzu" firstAttribute="leading" secondItem="mkn-Y1-UDB" secondAttribute="leading" constant="16" id="cG3-zT-bli"/>
+                            <constraint firstItem="mkn-Y1-UDB" firstAttribute="trailing" secondItem="BRV-2y-gFW" secondAttribute="trailing" constant="16" id="dDG-Xq-Akr"/>
+                            <constraint firstItem="mkn-Y1-UDB" firstAttribute="trailing" secondItem="y0V-gQ-1O8" secondAttribute="trailing" constant="16" id="gCe-Yg-AGM"/>
+                            <constraint firstItem="BRV-2y-gFW" firstAttribute="top" secondItem="deq-tK-9Fx" secondAttribute="bottom" constant="18" id="gj0-KX-YEb"/>
+                            <constraint firstItem="7NJ-aI-xTH" firstAttribute="top" secondItem="mkn-Y1-UDB" secondAttribute="top" constant="8" id="kMn-db-pva"/>
+                            <constraint firstItem="BRV-2y-gFW" firstAttribute="leading" secondItem="mkn-Y1-UDB" secondAttribute="leading" constant="16" id="oEM-Bx-zmf"/>
+                            <constraint firstItem="deq-tK-9Fx" firstAttribute="top" secondItem="Yez-ox-YTl" secondAttribute="bottom" constant="8" id="yPF-T2-qC7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mkn-Y1-UDB"/>
+                    </view>
+                    <connections>
+                        <outlet property="charactersLabel" destination="MbS-zA-jzu" id="e4S-JI-NyN"/>
+                        <outlet property="crawlingTextTextView" destination="y0V-gQ-1O8" id="fic-sm-IZ4"/>
+                        <outlet property="releaseDateLabel" destination="Yez-ox-YTl" id="2f8-AM-MXx"/>
+                        <outlet property="titleLabel" destination="7NJ-aI-xTH" id="UcJ-Dn-mQa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Oz-Zp-gEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2592.8000000000002" y="92.203898050974516"/>
+        </scene>
     </scenes>
     <resources>
         <image name="sw-logo" width="400" height="400"/>
