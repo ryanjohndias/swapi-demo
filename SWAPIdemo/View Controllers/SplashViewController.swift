@@ -10,18 +10,29 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
+    // MARK: - Outlets
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TODO: Fetch data
-        // TODO: Show activity after x seconds of waiting
-        
         navigationController?.setNavigationBarHidden(true, animated: false)
         
+        // Show the activity indicator after x seconds of loading
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            self.activityIndicator.startAnimating()
+        })
+        
+        // Fetch and persist the film data
         APIManager.shared.getFilms(success: { filmsResponse in
             self.gotoHomeViewController()
         }) { error in
             
+            // TODO: error messaging?
+            self.gotoHomeViewController()
         }
     }
 
