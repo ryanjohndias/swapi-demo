@@ -13,11 +13,12 @@ class HomeViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyStateLabel: UILabel!
     
     // MARK: - Class vars
     
     var films: [CDFilm] = []
-    var releaseDateFormatter = DateFormatter(withFormat: "yyyy-MM-dd")
+    let releaseDateFormatter = DateFormatter(withFormat: "yyyy-MM-dd")
     
     // MARK: - Lifecycle
     
@@ -29,6 +30,7 @@ class HomeViewController: UIViewController {
         // Table view setup
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 168
+        tableView.tableFooterView = UIView()
         
         CoreDataManager.shared.fetchFilms(success: { (films) in
             
@@ -41,14 +43,32 @@ class HomeViewController: UIViewController {
                 }
             })
             
+            if self.films.count == 0 {
+                self.showEmptyState(withMessage: Constants.Errors.filmsEmptyStateMessage)
+            } else {
+                self.hideEmptyState()
+            }
+            
             self.tableView.reloadData()
             
         }, failure: { (error) in
-            
+            self.showEmptyState(withMessage: Constants.Errors.filmsErrorStateMessage)
         })
         
     }
 
+    // MARK: - Empty / Error state UI helpers
+    
+    func showEmptyState(withMessage text: String) {
+        emptyStateLabel.text = text
+        emptyStateLabel.isHidden = false
+    }
+    
+    func hideEmptyState() {
+        emptyStateLabel.text = ""
+        emptyStateLabel.isHidden = true
+    }
+    
     // MARK: - Navigation
     
     func gotoFilm(_ film: CDFilm) {

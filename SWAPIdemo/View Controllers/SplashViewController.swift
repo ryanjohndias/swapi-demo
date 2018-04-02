@@ -30,7 +30,7 @@ class SplashViewController: UIViewController {
         APIManager.shared.getFilms(success: { filmsResponse in
             self.gotoHomeViewController()
         }) { error in
-            
+
             // TODO: error messaging?
             self.gotoHomeViewController()
         }

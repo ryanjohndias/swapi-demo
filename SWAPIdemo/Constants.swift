@@ -26,6 +26,12 @@ enum Constants {
         static let filmEntityName = "CDFilm"
     }
     
+    enum Errors {
+        
+        static let filmsEmptyStateMessage = "No films... yet"
+        static let filmsErrorStateMessage = "There was an error loading films"
+    }
+    
     enum Navigation {
         
         static let splashViewController = "SplashViewController"

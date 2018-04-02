@@ -48,21 +48,28 @@ class FilmViewController: UIViewController {
             charactersLabel.text = charactersText
         }
 
-        var transform = CATransform3DIdentity
-        
         // Skew and rotate the text
+        var transform = CATransform3DIdentity
         transform.m34 = -2.0 / 500.0
         transform = CATransform3DRotate(transform, CGFloat(45 * Double.pi / 180), 1, 0, 0)
         crawlingTextTextView.layer.transform = transform
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        animateCrawl()
+    }
+    
     func animateCrawl() {
         
-        // FIXME: (needs tweaking)
         // Animate the scrolling
         
-        let startOffset = CGPoint(x: 0, y: -200)
-        let endOffset = CGPoint(x: 0, y: crawlingTextTextView.contentSize.height*2)
+//        var contentSize = crawlingTextTextView.contentSize
+//        contentSize.height += contentSize.height
+//        crawlingTextTextView.contentSize = contentSize
+//
+        let startOffset = CGPoint(x: 0, y: 0)
+        let endOffset = CGPoint(x: 0, y: 300)
         
         crawlingTextTextView.setContentOffset(startOffset, animated: false)
         
