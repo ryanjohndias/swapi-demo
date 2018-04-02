@@ -41,23 +41,35 @@ class APIManager {
             
             let group = DispatchGroup()
             
-            var urls: [Int: String] = [:]
+            var omdbMapping: [Int: OMDBFilm] = [:]
+            var characterMapping: [Int: [Person]] = [:]
             
             // Fetch the OMDB record for each film
             for film in response.results {
                 group.enter()
                 self.searchOMDB(for: film.title, success: { (omdbFilm) in
-                    urls[film.episodeId] = omdbFilm.Poster
+                    omdbMapping[film.episodeId] = omdbFilm
                     group.leave()
                 }, failure: { (error) in
                     group.leave()
                 })
             }
             
-            // All OMDB records have been fetched; continue with saving
+            // Fetch characters for films
+            for film in response.results {
+                group.enter()
+                self.getPeople(at: film.characters, response: { (people) in
+                    characterMapping[film.episodeId] = people
+                    group.leave()
+                })
+            }
+            
+            // All OMDB records and characters have been fetched; continue with saving
             group.notify(queue: .main, execute: {
                 for film in response.results {
-                    CoreDataManager.shared.saveFilm(film: film, withImageUrl: urls[film.episodeId])
+                    CoreDataManager.shared.saveFilm(film: film,
+                                                    characters: characterMapping[film.episodeId],
+                                                    withOMDBFilm: omdbMapping[film.episodeId])
                 }
                 success?(response)
             })
@@ -67,11 +79,30 @@ class APIManager {
     
     func getPerson(withUrl urlString: String, success: ((Person) -> Void)?, failure: ((Error) -> Void)?) {
         
-        let url = URL(string: urlString)
-        if let url = url {
+        if let url = URL(string: urlString) {
             NetworkManager.shared.get(url: url, success: success, failure: failure)
         } else {
             // TODO: Error handling
+        }
+    }
+    
+    func getPeople(at urls: [String], response: @escaping (([Person]) -> Void)) {
+        
+        var people: [Person] = []
+        let group = DispatchGroup()
+        
+        for urlString in urls {
+            group.enter()
+            getPerson(withUrl: urlString, success: { (person) in
+                people.append(person)
+                group.leave()
+            }, failure: { (error) in
+                group.leave()
+            })
+        }
+        
+        group.notify(queue: .main) {
+            response(people)
         }
     }
     

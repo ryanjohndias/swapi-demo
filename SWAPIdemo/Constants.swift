@@ -21,6 +21,11 @@ enum Constants {
         static let omdbMovieUrl = "http://www.omdbapi.com/?i={imdbId}&y=&plot=short&r=json&apikey=\(Constants.Configuration.omdbApiKey)"
     }
     
+    enum CoreData {
+        
+        static let filmEntityName = "CDFilm"
+    }
+    
     enum Navigation {
         
         static let splashViewController = "SplashViewController"

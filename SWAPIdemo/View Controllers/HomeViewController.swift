@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     // MARK: - Class vars
     
     var films: [CDFilm] = []
-    var releaseDateFormatter = DateFormatter(withFormat: "YYYY-mm-dd")
+    var releaseDateFormatter = DateFormatter(withFormat: "yyyy-MM-dd")
     
     // MARK: - Lifecycle
     

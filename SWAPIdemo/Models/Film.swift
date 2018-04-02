@@ -18,8 +18,8 @@ struct Film: Codable {
         case producer
         case releaseDate = "release_date"
         case characters
-        case created
-        case edited
+        case dateCreated = "created"
+        case dateEdited = "edited"
     }
     
     let episodeId: Int
@@ -29,8 +29,6 @@ struct Film: Codable {
     let producer: String
     let releaseDate: String
     let characters: [String]
-    
-    // TODO: Parse these to dates
-    let created: String
-    let edited: String
+    let dateCreated: String
+    let dateEdited: String
 }

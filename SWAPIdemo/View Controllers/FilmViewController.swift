@@ -16,45 +16,38 @@ class FilmViewController: UIViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var charactersLabel: UILabel!
     @IBOutlet weak var crawlingTextTextView: UITextView!
+    @IBOutlet weak var ratingLabel: UILabel!
     
     // MARK: Class vars
     var film: CDFilm?
     var characters: [Person] = []
+    
+    var releaseDateFormatter = DateFormatter(withFormat: "yyyy-MM-dd")
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let film = film {
             titleLabel.text = film.title
-//            releaseDateLabel.text = film.releaseDate
-//            crawlingTextTextView.text = film.openingCrawlText
+            releaseDateLabel.text = releaseDateFormatter.string(for: film.releaseDate)
+            ratingLabel.text = "\(film.rating)/10"
+            crawlingTextTextView.text = film.openingCrawlText
             
-            // Creating a dispatch group for grouping the character async fetches
-//            let group = DispatchGroup()
+            let charactersText = film.characters?.reduce("", { (result, character) in
+                
+                if let character = character as? CDCharacter,
+                    let charactername = character.name,
+                    let result = result {
+                    return result == "" ? character.name : result + ", " + charactername
+                } else {
+                    return result
+                }
+                
+            })
             
-            // Fetching each character individually
-//            for personUrlString in film.characters {
-//                group.enter()
-//                APIManager.shared.getPerson(withUrl: personUrlString, success: { (person) in
-//                    self.characters.append(person)
-//                    group.leave()
-//                }, failure: { (error) in
-//                    group.leave()
-//                })
-//            }
-            
-            // Group is completed - can now set the label
-//            group.notify(queue: .main, execute: {
-//                self.charactersLabel.text = self.characters.reduce("", { (result, person) in
-//                    result == "" ? person.name : result + ", " + person.name
-//                })
-//
-//                self.animateCrawl()
-//            })
+            charactersLabel.text = charactersText
         }
-        
-        
-        
+
         var transform = CATransform3DIdentity
         
         // Skew and rotate the text

@@ -12,6 +12,8 @@
 		9405A794206E8BCC00D8426E /* CDFilm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405A792206E8BCB00D8426E /* CDFilm+CoreDataProperties.swift */; };
 		9405A796206E8DF700D8426E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405A795206E8DF700D8426E /* CoreDataManager.swift */; };
 		9405A798206EA7EB00D8426E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405A797206EA7EB00D8426E /* DateFormatter.swift */; };
+		941AE7C52072569A00605CCB /* CDCharacter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE7C32072569A00605CCB /* CDCharacter+CoreDataClass.swift */; };
+		941AE7C62072569A00605CCB /* CDCharacter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE7C42072569A00605CCB /* CDCharacter+CoreDataProperties.swift */; };
 		943FE23F206B8F08004771F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE23E206B8F08004771F6 /* AppDelegate.swift */; };
 		943FE244206B8F08004771F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943FE242206B8F08004771F6 /* Main.storyboard */; };
 		943FE247206B8F08004771F6 /* SWAPIdemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 943FE245206B8F08004771F6 /* SWAPIdemo.xcdatamodeld */; };
@@ -48,6 +50,8 @@
 		9405A792206E8BCB00D8426E /* CDFilm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDFilm+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9405A795206E8DF700D8426E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9405A797206EA7EB00D8426E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		941AE7C32072569A00605CCB /* CDCharacter+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCharacter+CoreDataClass.swift"; sourceTree = "<group>"; };
+		941AE7C42072569A00605CCB /* CDCharacter+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCharacter+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		943FE23B206B8F08004771F6 /* SWAPIdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWAPIdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943FE23E206B8F08004771F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		943FE243206B8F08004771F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 		9405A790206E8A7100D8426E /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				941AE7C32072569A00605CCB /* CDCharacter+CoreDataClass.swift */,
+				941AE7C42072569A00605CCB /* CDCharacter+CoreDataProperties.swift */,
 				9405A791206E8BCB00D8426E /* CDFilm+CoreDataClass.swift */,
 				9405A792206E8BCB00D8426E /* CDFilm+CoreDataProperties.swift */,
 			);
@@ -316,6 +322,7 @@
 			files = (
 				9405A78E206E423D00D8426E /* Person.swift in Sources */,
 				943FE277206BAE6D004771F6 /* FilmsResponse.swift in Sources */,
+				941AE7C52072569A00605CCB /* CDCharacter+CoreDataClass.swift in Sources */,
 				943FE279206BC34D004771F6 /* OMDBSearchResult.swift in Sources */,
 				943FE275206BADBE004771F6 /* NetworkManager.swift in Sources */,
 				943FE273206BADA2004771F6 /* APIManager.swift in Sources */,
@@ -324,6 +331,7 @@
 				9405A796206E8DF700D8426E /* CoreDataManager.swift in Sources */,
 				943FE26A206B9245004771F6 /* HomeViewController.swift in Sources */,
 				943FE26D206BA679004771F6 /* Film.swift in Sources */,
+				941AE7C62072569A00605CCB /* CDCharacter+CoreDataProperties.swift in Sources */,
 				9405A794206E8BCC00D8426E /* CDFilm+CoreDataProperties.swift in Sources */,
 				9405A793206E8BCB00D8426E /* CDFilm+CoreDataClass.swift in Sources */,
 				943FE270206BA748004771F6 /* HomeTableViewCell.swift in Sources */,
