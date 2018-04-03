@@ -3,6 +3,7 @@
     <entity name="CDCharacter" representedClassName=".CDCharacter" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="film" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDFilm" inverseName="characters" inverseEntity="CDFilm" syncable="YES"/>
     </entity>
     <entity name="CDFilm" representedClassName=".CDFilm" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -15,10 +16,10 @@
         <attribute name="rating" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="releaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDCharacter" syncable="YES"/>
+        <relationship name="characters" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDCharacter" inverseName="film" inverseEntity="CDCharacter" syncable="YES"/>
     </entity>
     <elements>
         <element name="CDFilm" positionX="-63" positionY="-18" width="128" height="208"/>
-        <element name="CDCharacter" positionX="97" positionY="-18" width="128" height="73"/>
+        <element name="CDCharacter" positionX="97" positionY="-18" width="128" height="88"/>
     </elements>
 </model>

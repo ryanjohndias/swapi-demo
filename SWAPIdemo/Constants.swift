@@ -17,6 +17,8 @@ enum Constants {
     
     enum API {
         
+        static let baseUrl = "https://swapi.co/api/"
+        
         static let omdbSearchUrl = "http://www.omdbapi.com/?s={searchTerm}&y=&plot=short&r=json&apikey=\(Constants.Configuration.omdbApiKey)"
         static let omdbMovieUrl = "http://www.omdbapi.com/?i={imdbId}&y=&plot=short&r=json&apikey=\(Constants.Configuration.omdbApiKey)"
     }

@@ -22,7 +22,7 @@ class APIManager {
     
     func baseURL() -> URL {
         
-        guard let baseURL = URL(string: "https://swapi.co/api/") else {
+        guard let baseURL = URL(string: Constants.API.baseUrl) else {
             fatalError("baseURL is invalid")
         }
         
@@ -77,15 +77,6 @@ class APIManager {
         }, failure: failure)
     }
     
-    func getPerson(withUrl urlString: String, success: ((Person) -> Void)?, failure: ((Error) -> Void)?) {
-        
-        if let url = URL(string: urlString) {
-            NetworkManager.shared.get(url: url, success: success, failure: failure)
-        } else {
-            // TODO: Error handling
-        }
-    }
-    
     func getPeople(at urls: [String], response: @escaping (([Person]) -> Void)) {
         
         var people: [Person] = []
@@ -106,13 +97,26 @@ class APIManager {
         }
     }
     
+    func getPerson(withUrl urlString: String, success: ((Person) -> Void)?, failure: ((Error) -> Void)?) {
+        
+        if let url = URL(string: urlString) {
+            NetworkManager.shared.get(url: url, success: success, failure: failure)
+        } else {
+            
+            let error = CustomError(withDescription: "Could not convert URL string to URL: \(urlString)")
+            failure?(error)
+        }
+    }
+    
+    // MARK: - OMDB requests
+    
     func searchOMDB(for searchTerm: String, success: ((OMDBFilm) -> Void)?, failure: ((Error?) -> Void)?) {
 
         let searchTerm = searchTerm.replacingOccurrences(of: " ", with: "+")
         let searchURLString = Constants.API.omdbSearchUrl.replacingOccurrences(of: "{searchTerm}", with: searchTerm)
         
         guard let searchUrl = URL(string: searchURLString) else {
-            failure?(nil)
+            failure?(CustomError(withDescription: "OMDB search URL could not be created: \(searchURLString)"))
             return
         }
 
@@ -126,15 +130,15 @@ class APIManager {
                 if let filmUrl = URL(string: filmUrlString) {
                     NetworkManager.shared.get(url: filmUrl, success: success, failure: failure)
                 } else {
-                    failure?(nil)
+                    failure?(CustomError(withDescription: "OMDB film URL could not be created: \(filmUrlString)"))
                 }
                 
             } else {
-                failure?(nil)
+                failure?(CustomError(withDescription: "No OMDB films found for search URL: \(searchUrl)"))
             }
             
         }) { (error) in
-            failure?(nil)
+            failure?(error)
         }
 
     }

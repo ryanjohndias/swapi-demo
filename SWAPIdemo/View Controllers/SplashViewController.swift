@@ -31,7 +31,7 @@ class SplashViewController: UIViewController {
             self.gotoHomeViewController()
         }) { error in
 
-            // TODO: error messaging?
+            // Go to home anyway - data will be retrieved from local cache
             self.gotoHomeViewController()
         }
     }

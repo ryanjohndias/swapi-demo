@@ -14,6 +14,7 @@
 		9405A798206EA7EB00D8426E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9405A797206EA7EB00D8426E /* DateFormatter.swift */; };
 		941AE7C52072569A00605CCB /* CDCharacter+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE7C32072569A00605CCB /* CDCharacter+CoreDataClass.swift */; };
 		941AE7C62072569A00605CCB /* CDCharacter+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE7C42072569A00605CCB /* CDCharacter+CoreDataProperties.swift */; };
+		941AE7C82073649E00605CCB /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE7C72073649D00605CCB /* CustomError.swift */; };
 		943FE23F206B8F08004771F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943FE23E206B8F08004771F6 /* AppDelegate.swift */; };
 		943FE244206B8F08004771F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943FE242206B8F08004771F6 /* Main.storyboard */; };
 		943FE247206B8F08004771F6 /* SWAPIdemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 943FE245206B8F08004771F6 /* SWAPIdemo.xcdatamodeld */; };
@@ -52,6 +53,7 @@
 		9405A797206EA7EB00D8426E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		941AE7C32072569A00605CCB /* CDCharacter+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCharacter+CoreDataClass.swift"; sourceTree = "<group>"; };
 		941AE7C42072569A00605CCB /* CDCharacter+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCharacter+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		941AE7C72073649D00605CCB /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		943FE23B206B8F08004771F6 /* SWAPIdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWAPIdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		943FE23E206B8F08004771F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		943FE243206B8F08004771F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				943FE274206BADBE004771F6 /* NetworkManager.swift */,
 				943FE272206BADA2004771F6 /* APIManager.swift */,
 				9405A795206E8DF700D8426E /* CoreDataManager.swift */,
+				941AE7C72073649D00605CCB /* CustomError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				943FE275206BADBE004771F6 /* NetworkManager.swift in Sources */,
 				943FE273206BADA2004771F6 /* APIManager.swift in Sources */,
 				9405A798206EA7EB00D8426E /* DateFormatter.swift in Sources */,
+				941AE7C82073649E00605CCB /* CustomError.swift in Sources */,
 				943FE27D206BDA9A004771F6 /* UIImageView.swift in Sources */,
 				9405A796206E8DF700D8426E /* CoreDataManager.swift in Sources */,
 				943FE26A206B9245004771F6 /* HomeViewController.swift in Sources */,

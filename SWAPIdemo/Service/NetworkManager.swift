@@ -42,8 +42,7 @@ class NetworkManager {
                         failure?(error)
                     }
                 } else {
-                    let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
-                    failure?(error)
+                    failure?(CustomError(withDescription: "Data was not retrieved from request"))
                 }
             }
         }

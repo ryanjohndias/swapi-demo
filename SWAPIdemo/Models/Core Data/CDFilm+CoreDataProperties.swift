@@ -2,7 +2,7 @@
 //  CDFilm+CoreDataProperties.swift
 //  SWAPIdemo
 //
-//  Created by Ryan Dias on 2018/04/02.
+//  Created by Ryan Dias on 2018/04/03.
 //  Copyright © 2018 Ryan Dias. All rights reserved.
 //
 //
