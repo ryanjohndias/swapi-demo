@@ -100,7 +100,7 @@ extension HomeViewController: UITableViewDataSource {
         }
         cell.mainImageView.image = nil
         if let imageUrl = film.imageUrl {
-            cell.mainImageView.loadImage(fromURL: imageUrl)
+            cell.mainImageView.loadImage(fromURL: imageUrl, fadeIn: true)
         }
  
         return cell

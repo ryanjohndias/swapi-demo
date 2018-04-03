@@ -6,7 +6,7 @@
 //  Copyright © 2018 Ryan Dias. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 struct FilmsResponse: Codable {
 

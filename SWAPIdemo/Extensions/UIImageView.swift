@@ -10,11 +10,15 @@ import UIKit
 
 extension UIImageView {
 
-    func loadImage(fromURL urlString: String) {
+    func loadImage(fromURL urlString: String, fadeIn: Bool = false) {
         
         guard let url = URL(string: urlString) else {
             print("Could not create URL from string '\(urlString)'")
             return
+        }
+        
+        if fadeIn {
+            alpha = 0
         }
         
         let getImageTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -34,6 +38,11 @@ extension UIImageView {
                     if let actualImage = UIImage(data: data) {
                         DispatchQueue.main.async {
                             self.image = actualImage
+                            if fadeIn {
+                                UIView.animate(withDuration: 0.5, animations: {
+                                    self.alpha = 1
+                                })
+                            }
                         }
                     }
                 }

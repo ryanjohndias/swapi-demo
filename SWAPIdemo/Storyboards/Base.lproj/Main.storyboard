@@ -92,6 +92,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCF-q5-FEX">
+                                                    <rect key="frame" x="8" y="8" width="150" height="150"/>
+                                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vQM-s5-Ytk">
                                                     <rect key="frame" x="8" y="8" width="150" height="150"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -152,8 +156,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="Pdu-JI-uA1" secondAttribute="trailing" constant="8" id="Bk1-4X-lWJ"/>
                                                 <constraint firstItem="nqO-CG-DNq" firstAttribute="top" secondItem="qLs-aw-sct" secondAttribute="bottom" id="CQi-vN-aAd"/>
                                                 <constraint firstItem="00S-s3-hwe" firstAttribute="leading" secondItem="vQM-s5-Ytk" secondAttribute="trailing" constant="8" id="DLW-6k-yqa"/>
+                                                <constraint firstItem="kCF-q5-FEX" firstAttribute="leading" secondItem="vQM-s5-Ytk" secondAttribute="leading" id="Fo1-b7-Cvv"/>
                                                 <constraint firstItem="eFs-h0-ZCj" firstAttribute="leading" secondItem="vQM-s5-Ytk" secondAttribute="trailing" constant="8" id="Htg-FK-Bsc"/>
                                                 <constraint firstItem="vQM-s5-Ytk" firstAttribute="top" secondItem="aJe-lw-L2k" secondAttribute="top" constant="8" id="KjX-6l-7Ca"/>
+                                                <constraint firstItem="kCF-q5-FEX" firstAttribute="top" secondItem="vQM-s5-Ytk" secondAttribute="top" id="R7f-Qo-hSe"/>
                                                 <constraint firstItem="eFs-h0-ZCj" firstAttribute="top" secondItem="Pdu-JI-uA1" secondAttribute="bottom" constant="8" id="RjK-We-424"/>
                                                 <constraint firstItem="00S-s3-hwe" firstAttribute="top" secondItem="eFs-h0-ZCj" secondAttribute="bottom" id="ZB8-S0-9iC"/>
                                                 <constraint firstItem="qLs-aw-sct" firstAttribute="leading" secondItem="vQM-s5-Ytk" secondAttribute="trailing" constant="8" id="a0F-yB-Zb2"/>
@@ -163,6 +169,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="QfY-HM-acy" secondAttribute="trailing" constant="8" id="koO-Zs-lZm"/>
                                                 <constraint firstAttribute="trailing" secondItem="nqO-CG-DNq" secondAttribute="trailing" constant="8" id="lFa-Xr-laQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="ban-y7-euB" secondAttribute="trailing" constant="8" id="o8Z-a7-nca"/>
+                                                <constraint firstItem="kCF-q5-FEX" firstAttribute="trailing" secondItem="vQM-s5-Ytk" secondAttribute="trailing" id="pZw-4X-UBC"/>
+                                                <constraint firstItem="kCF-q5-FEX" firstAttribute="bottom" secondItem="vQM-s5-Ytk" secondAttribute="bottom" id="pc5-qA-r0q"/>
                                                 <constraint firstItem="qLs-aw-sct" firstAttribute="top" secondItem="aJe-lw-L2k" secondAttribute="top" constant="8" id="pqW-Wf-7te"/>
                                                 <constraint firstItem="ban-y7-euB" firstAttribute="leading" secondItem="vQM-s5-Ytk" secondAttribute="trailing" constant="8" id="siB-Gi-goZ"/>
                                                 <constraint firstItem="ban-y7-euB" firstAttribute="top" secondItem="00S-s3-hwe" secondAttribute="bottom" constant="8" id="vNj-Rq-hh7"/>
