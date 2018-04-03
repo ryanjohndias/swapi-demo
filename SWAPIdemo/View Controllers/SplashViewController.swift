@@ -37,7 +37,7 @@ class SplashViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(false)
+        super.viewDidDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     

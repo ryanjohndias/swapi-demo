@@ -18,11 +18,14 @@ class FilmViewController: UIViewController {
     @IBOutlet weak var crawlingTextTextView: UITextView!
     @IBOutlet weak var ratingLabel: UILabel!
     
-    // MARK: Class vars
+    // MARK: - Class vars
+    
     var film: CDFilm?
     var characters: [Person] = []
     
     var releaseDateFormatter = DateFormatter(withFormat: "yyyy-MM-dd")
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,18 +59,17 @@ class FilmViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+        super.viewDidAppear(animated)
         animateCrawl()
     }
     
+    // MARK: - UI configuration
+    
     func animateCrawl() {
         
-        // Animate the scrolling
+        // TODO: animateCrawl needs tweaking, as it doesn't produce the desired affect
         
-//        var contentSize = crawlingTextTextView.contentSize
-//        contentSize.height += contentSize.height
-//        crawlingTextTextView.contentSize = contentSize
-//
+        // Animate the scrolling
         let startOffset = CGPoint(x: 0, y: 0)
         let endOffset = CGPoint(x: 0, y: 300)
         
